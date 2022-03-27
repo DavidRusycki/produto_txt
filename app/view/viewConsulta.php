@@ -34,8 +34,18 @@ class ViewConsulta
               <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    <link rel="stylesheet" href="http://localhost/template_html_php/sistem/style/style.css">    <script src="https://kit.fontawesome.com/49a857d31a.js" crossorigin="anonymous"></script>   </head> 
             <body> 
 
+
             <h1 class="titulo_principal mt-5">Consulta de Produtos</h1> 
             
+            <img id="loading" class="fixed-top" style="display:none;margin:auto;margin-top:21%;width:2%" src="http://localhost/produto_txt/app/view/loading.gif">
+            <script>
+                
+                function loading() {
+                    document.getElementById(\'loading\').style.setProperty(\'display\', \'inherit\');
+                }
+
+            </script>
+
         ';
         
         $sHtml .= $this->getTabela();
@@ -58,7 +68,7 @@ class ViewConsulta
         
         $sTable .='
             <div class="w-75 mx-auto">
-              <a class="btn btn-success btn-sm mb-2" href="http://localhost/produto_txt/?'.\Enum\EnumSistema::ACAO.'='.\Enum\EnumAcoes::ACAO_INCLUIR.'&'.\Enum\EnumSistema::METODO.'='.\Enum\EnumSistema::MONTA_TELA.'" >Incluir</a>
+              <a onClick="loading()" class="btn btn-success btn-sm mb-2" href="http://localhost/produto_txt/?'.\Enum\EnumSistema::ACAO.'='.\Enum\EnumAcoes::ACAO_INCLUIR.'&'.\Enum\EnumSistema::METODO.'='.\Enum\EnumSistema::MONTA_TELA.'" >Incluir</a>
             </div>
         ';
         
@@ -86,10 +96,10 @@ class ViewConsulta
             $sTable .= $oRegistro->getQuantidadeEstoque();
             $sTable .= '</td>';
             $sTable .= '<td>
-                            <a class="btn btn-danger btn-sm" href="http://localhost/produto_txt/?'.\Enum\EnumSistema::ACAO.'='.\Enum\EnumAcoes::ACAO_ALTERAR.'&'.\Enum\EnumSistema::METODO.'='.\Enum\EnumSistema::MONTA_TELA.'&id='.$oRegistro->getCodigo().'" >
+                            <a onClick="loading()" class="btn btn-danger btn-sm" href="http://localhost/produto_txt/?'.\Enum\EnumSistema::ACAO.'='.\Enum\EnumAcoes::ACAO_ALTERAR.'&'.\Enum\EnumSistema::METODO.'='.\Enum\EnumSistema::MONTA_TELA.'&id='.$oRegistro->getCodigo().'" >
                                 <i class="fa-solid fa-pencil"></i>
                             </a>
-                            <a class="botao_excluir btn btn-success btn-sm" href="http://localhost/produto_txt/?'.\Enum\EnumSistema::ACAO.'='.\Enum\EnumAcoes::ACAO_EXCLUIR.'&'.\Enum\EnumSistema::METODO.'='.\Enum\EnumSistema::PROCESSA_DADOS.'&id='.$oRegistro->getCodigo().'" >
+                            <a onClick="loading()" class="botao_excluir btn btn-success btn-sm" href="http://localhost/produto_txt/?'.\Enum\EnumSistema::ACAO.'='.\Enum\EnumAcoes::ACAO_EXCLUIR.'&'.\Enum\EnumSistema::METODO.'='.\Enum\EnumSistema::PROCESSA_DADOS.'&id='.$oRegistro->getCodigo().'" >
                                 <i class="fa-solid fa-trash-can"></i>
                             </a>
                         </td>';

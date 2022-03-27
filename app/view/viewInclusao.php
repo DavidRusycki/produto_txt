@@ -21,6 +21,16 @@ class ViewInclusao
             <title>Produtos</title> 
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    <link rel="stylesheet" href="http://localhost/template_html_php/sistem/style/style.css">    <script src="https://kit.fontawesome.com/49a857d31a.js" crossorigin="anonymous"></script>   </head> 
             <body> 
+            
+                <img id="loading" class="fixed-top" style="display:none;margin:auto;margin-top:21%;width:2%" src="http://localhost/produto_txt/app/view/loading.gif">
+                <script>
+
+                    function loading() {
+                        document.getElementById(\'loading\').style.setProperty(\'display\', \'inherit\');
+                    }
+
+                </script>
+
 
                 <h1 class="mt-5 titulo_principal">Inclusão de Produtos</h1> 
 
@@ -37,8 +47,8 @@ class ViewInclusao
                     <input type="number" class="form-control" name="estoque" placeholder="Estoque">
                     <br>
 
-                    <button type="submit" class="btn btn-success">Incluir</button>
-                    <a href="http://localhost/produto_txt/?'.\Enum\EnumSistema::ACAO.'='.\Enum\EnumAcoes::ACAO_CONSULTAR.'&'.\Enum\EnumSistema::METODO.'='.\Enum\EnumSistema::MONTA_TELA.'" class="btn btn-danger">Voltar</button>
+                    <button onClick="loading()" type="submit" class="btn btn-success">Incluir</button>
+                    <a onClick="loading()" href="http://localhost/produto_txt/?'.\Enum\EnumSistema::ACAO.'='.\Enum\EnumAcoes::ACAO_CONSULTAR.'&'.\Enum\EnumSistema::METODO.'='.\Enum\EnumSistema::MONTA_TELA.'" class="btn btn-danger">Voltar</button>
 
                     <div>
 
