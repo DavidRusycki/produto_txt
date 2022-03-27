@@ -1,0 +1,1 @@
+{"1":{"codigo":1,"nome":"Barra de Chocolate Preto","valor":"5.55","quantidadeEstoque":"50"},"2":{"codigo":2,"nome":"Barra de Chocolate Branco","valor":"6.50","quantidadeEstoque":50},"3":{"codigo":3,"nome":"Bis","valor":"8.99","quantidadeEstoque":"100"}}
